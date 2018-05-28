@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Assertions;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance = null;
 
 	[SerializeField] private GameObject mainMenu;
+	[SerializeField] public RawImage gameOverImage;
 
 	private bool playerActive = false;
 	private bool gameOver = false;
@@ -49,6 +51,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void PlayerCollided() {
+		gameOverImage.enabled = true;
 		gameOver = true;
 	}
 
