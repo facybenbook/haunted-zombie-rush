@@ -27,7 +27,7 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update () {
-		if (!GameManager.instance.GameOver) {
+		if (!GameManager.instance.GameOver && GameManager.instance.GameStarted) {
 			if (Input.GetMouseButtonDown (0)) {
 				GameManager.instance.PlayerStartedGame ();
 				anim.Play ("Jump");
